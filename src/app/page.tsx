@@ -26,7 +26,7 @@ export default function Home() {
           </Button>
 
           <Button size="lg" asChild>
-            <Link href="#">Create Profile</Link>
+            <Link href="/create-profile">Create Profile</Link>
           </Button>
         </div>
       </main>
