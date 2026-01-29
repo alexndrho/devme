@@ -1,8 +1,8 @@
 "use client";
 
 import { useProfileFormValues } from "../hooks/use-profile-form-values";
-import Introduction from "./Introduction";
-import PreviewCard from "./PreviewCard";
+import Introduction from "./introduction";
+import PreviewCard from "./preview-card";
 
 export default function CreateProfilePage() {
   const [profileFormValues, setProfileFormValues] = useProfileFormValues();
