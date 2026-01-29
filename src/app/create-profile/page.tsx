@@ -12,6 +12,7 @@ export default function CreateProfilePage() {
       <Introduction
         values={profileFormValues}
         setValues={setProfileFormValues}
+        className="flex-1"
       />
 
       <PreviewCard values={profileFormValues} />
