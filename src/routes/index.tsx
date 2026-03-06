@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, Link } from '@tanstack/react-router';
 import { Button } from '#/components/ui/button';
 
 export const Route = createFileRoute('/')({ component: App });
@@ -20,7 +20,9 @@ function App() {
             </a>
           </Button>
 
-          <Button size="lg">Create Profile</Button>
+          <Button size="lg">
+            <Link to="/create-profile">Create Profile</Link>
+          </Button>
         </div>
       </main>
     </>
