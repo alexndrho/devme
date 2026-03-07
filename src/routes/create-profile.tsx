@@ -16,7 +16,7 @@ function CreateProfile() {
   const nextPage = () => setActiveProfile((current) => (current < 2 ? current + 1 : current));
 
   return (
-    <div className="container mx-auto p-2 flex flex-col md:flex-row gap-2">
+    <div className="container mx-auto flex flex-col md:flex-row gap-4">
       {activeProfile === 1 ? (
         <IntroductionCard
           values={profileFormValues}

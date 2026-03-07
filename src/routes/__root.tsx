@@ -40,8 +40,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="antialiased">
-        <Header />
-        <TooltipProvider>{children}</TooltipProvider>
+        <TooltipProvider>
+          <Header />
+
+          <main className="p-4">{children}</main>
+        </TooltipProvider>
 
         <TanStackDevtools
           config={{

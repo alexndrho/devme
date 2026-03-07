@@ -31,7 +31,7 @@ export default function ProfileCard({
         {(previousPage || nextPage) && (
           <div
             className={cn(
-              'mt-4 flex',
+              'mt-4 flex gap-4',
               previousPage && nextPage
                 ? 'justify-between'
                 : previousPage
