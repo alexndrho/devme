@@ -11,6 +11,7 @@ export const INITIAL_PROFILE_FORM_VALUES = {
   learning: '',
   collaboratingOn: '',
   anythingElse: '',
+  skills: [] as string[],
 };
 
 export type ProfileFormValues = typeof INITIAL_PROFILE_FORM_VALUES;

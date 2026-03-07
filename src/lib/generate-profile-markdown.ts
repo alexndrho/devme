@@ -1,4 +1,5 @@
 import type { INITIAL_PROFILE_FORM_VALUES } from '#/constants/profile-form';
+import { getSkillIconUrl } from '#/lib/utils';
 
 export default function generateProfileMarkdown(values?: typeof INITIAL_PROFILE_FORM_VALUES) {
   if (!values) return '';
@@ -24,6 +25,11 @@ export default function generateProfileMarkdown(values?: typeof INITIAL_PROFILE_
     lines.push(`- 🤝 I'm open to collaborating on ${values.collaboratingOn}`);
   if (values.anythingElse)
     lines.push(`- ⚡ Anything else I'd like to share ${values.anythingElse}`);
+
+  if (values.skills.length > 0) {
+    lines.push('\n### My Skills');
+    lines.push(`![Skills](${getSkillIconUrl(values.skills)})`);
+  }
 
   return lines.join('\n');
 }

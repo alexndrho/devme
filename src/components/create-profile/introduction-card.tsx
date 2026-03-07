@@ -6,11 +6,21 @@ import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from '..
 import { Textarea } from '../ui/textarea';
 import type { ProfileFormCardProps } from './types';
 
-export default function IntroductionCard({ values, setValues, className }: ProfileFormCardProps) {
+export default function IntroductionCard({
+  values,
+  setValues,
+  nextPage,
+  className,
+}: Omit<ProfileFormCardProps, 'previousPage'>) {
   const safeValues = { ...INITIAL_PROFILE_FORM_VALUES, ...(values ?? {}) };
 
   return (
-    <ProfileCard title="Introduction" description="Tell us about yourself" className={className}>
+    <ProfileCard
+      title="Introduction"
+      description="Tell us about yourself"
+      nextPage={nextPage}
+      className={className}
+    >
       <FieldGroup>
         <FieldSet>
           <Field>
