@@ -5,7 +5,8 @@ export default function SkillToggle({
   skill,
   isSelected,
   onToggle,
-}: {
+  ...props
+}: React.ComponentProps<'button'> & {
   skill: Skill;
   isSelected: boolean;
   onToggle: () => void;
@@ -20,6 +21,7 @@ export default function SkillToggle({
           ? 'border-primary bg-primary/10 ring-1 ring-primary'
           : 'border-border bg-background hover:bg-accent',
       )}
+      {...props}
     >
       <img src={getSkillIconUrl([skill.slug])} alt={skill.label} width={32} height={32} />
       <span

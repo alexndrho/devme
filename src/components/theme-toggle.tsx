@@ -33,7 +33,7 @@ function applyThemeMode(mode: ThemeMode) {
   document.documentElement.style.colorScheme = resolved;
 }
 
-export default function ThemeToggle() {
+export default function ThemeToggle(props: React.ComponentProps<typeof Button>) {
   const [mode, setMode] = useState<ThemeMode>('auto');
 
   useEffect(() => {
@@ -73,10 +73,15 @@ export default function ThemeToggle() {
   const Icon = mode === 'light' ? Sun : mode === 'dark' ? Moon : Monitor;
 
   return (
-    <>
-      <Button type="button" size="icon" onClick={toggleMode} aria-label={label}>
-        <Icon aria-hidden="true" />
-      </Button>
-    </>
+    <Button
+      variant="outline"
+      type="button"
+      size="icon"
+      onClick={toggleMode}
+      aria-label={label}
+      {...props}
+    >
+      <Icon aria-hidden="true" />
+    </Button>
   );
 }

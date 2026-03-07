@@ -17,14 +17,15 @@ function CreateProfile() {
 
   return (
     <div className="container mx-auto flex flex-col md:flex-row gap-4">
-      {activeProfile === 1 ? (
+      {activeProfile === 1 && (
         <IntroductionCard
           values={profileFormValues}
           setValues={setProfileFormValues}
           nextPage={nextPage}
           className="flex-1"
         />
-      ) : (
+      )}
+      {activeProfile === 2 && (
         <SkillsCard
           values={profileFormValues}
           setValues={setProfileFormValues}

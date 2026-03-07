@@ -9,18 +9,12 @@ import type { ProfileFormCardProps } from './types';
 export default function IntroductionCard({
   values,
   setValues,
-  nextPage,
-  className,
+  ...props
 }: Omit<ProfileFormCardProps, 'previousPage'>) {
   const safeValues = { ...INITIAL_PROFILE_FORM_VALUES, ...(values ?? {}) };
 
   return (
-    <ProfileCard
-      title="Introduction"
-      description="Tell us about yourself"
-      nextPage={nextPage}
-      className={className}
-    >
+    <ProfileCard title="Introduction" description="Tell us about yourself" {...props}>
       <FieldGroup>
         <FieldSet>
           <Field>

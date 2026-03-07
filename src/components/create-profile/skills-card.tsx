@@ -10,8 +10,7 @@ import type { ProfileFormCardProps } from './types';
 export default function SkillsCard({
   values,
   setValues,
-  previousPage,
-  className,
+  ...props
 }: Omit<ProfileFormCardProps, 'nextPage'>) {
   const safeValues = { ...INITIAL_PROFILE_FORM_VALUES, ...(values ?? {}) };
   const skills: string[] = safeValues.skills;
@@ -37,12 +36,7 @@ export default function SkillsCard({
   }
 
   return (
-    <ProfileCard
-      title="Skills"
-      description="Select your tech stack"
-      previousPage={previousPage}
-      className={className}
-    >
+    <ProfileCard title="Skills" description="Select your tech stack" {...props}>
       <div className="flex flex-col gap-6">
         {/* Selected skills — flat, drag to reorder freely across groups */}
         {skills.length > 0 && (
