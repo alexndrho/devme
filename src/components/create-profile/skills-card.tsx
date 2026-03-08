@@ -7,11 +7,7 @@ import SkillChip from '../ui/skill-chip';
 import SkillToggle from '../ui/skill-toggle';
 import type { ProfileFormCardProps } from './types';
 
-export default function SkillsCard({
-  values,
-  setValues,
-  ...props
-}: Omit<ProfileFormCardProps, 'nextPage'>) {
+export default function SkillsCard({ values, setValues, ...props }: ProfileFormCardProps) {
   const safeValues = { ...INITIAL_PROFILE_FORM_VALUES, ...(values ?? {}) };
   const skills: string[] = safeValues.skills;
 

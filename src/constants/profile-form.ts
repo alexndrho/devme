@@ -12,6 +12,8 @@ export const INITIAL_PROFILE_FORM_VALUES = {
   collaboratingOn: '',
   anythingElse: '',
   skills: [] as string[],
+  githubUsername: '',
+  streakStatsTheme: 'default',
 };
 
 export type ProfileFormValues = typeof INITIAL_PROFILE_FORM_VALUES;

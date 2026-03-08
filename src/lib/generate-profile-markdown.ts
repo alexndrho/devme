@@ -1,5 +1,5 @@
 import type { INITIAL_PROFILE_FORM_VALUES } from '#/constants/profile-form';
-import { getSkillIconUrl } from '#/lib/utils';
+import { getSkillIconUrl, getStreakStatsUrl } from '#/lib/utils';
 
 export default function generateProfileMarkdown(values?: typeof INITIAL_PROFILE_FORM_VALUES) {
   if (!values) return '';
@@ -29,6 +29,12 @@ export default function generateProfileMarkdown(values?: typeof INITIAL_PROFILE_
   if (values.skills.length > 0) {
     lines.push('\n### My Skills');
     lines.push(`![Skills](${getSkillIconUrl(values.skills)})`);
+  }
+  if (values.githubUsername) {
+    lines.push('\n### GitHub Stats');
+    lines.push(
+      `[![GitHub Streak](${getStreakStatsUrl(values.githubUsername, values.streakStatsTheme)})](https://git.io/streak-stats)`,
+    );
   }
 
   return lines.join('\n');
